@@ -22,7 +22,7 @@ class GuestPostsController < ApplicationController
     @guest_post.person_id = params[:person_id]
 
     if @guest_post.save
-            redirect_to guest_posts_url
+            redirect_to person_url(params[:person_id])
           else
       render 'new'
     end

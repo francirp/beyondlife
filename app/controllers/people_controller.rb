@@ -22,10 +22,9 @@ class PeopleController < ApplicationController
     @person.eulogy = params[:eulogy]
     @person.charity = params[:charity]
     @person.photo_url = params[:photo_url]
-    @person_id = @person.id
 
     if @person.save
-            redirect_to person_url(person_id)
+            redirect_to person_url(Person.last)
           else
       render 'new'
     end
