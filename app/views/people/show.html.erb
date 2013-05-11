@@ -5,7 +5,7 @@
 
 <div class="right-col">
   <h1><%= @person.full_name %></h1>
-
+  <h5><%= @person.dob %> - <%= @person.dod %></h5>
 
 
 <p>
@@ -38,9 +38,38 @@
   <%= @person.charity %>
 </p>
 
-<p>
-  <b>Photo url:</b>
-  <%= @person.photo_url %>
-</p>
+</div>
 
+<div class="guest_post_container">
+  <div class="button-header">
+      <% if session[:user_id].present? %>
+          <a href="<%= new_guest_post_url %>"><button class="btn btn-primary btn-large span3 offset2">Add a Guest Post</button></a>
+      <% else %>
+        <a href="/auth/facebook"><button class="btn btn-primary btn-large span3 offset2">Sign in via Facebook</button></a>
+      <% end %>
+  </div>
+
+    <% @person.guest_posts.each do |post| %>
+      <div class="clearfix hero-unit">
+        <div class="media">
+          <a class="pull-left">
+            <%= image_tag post.user.avatar, :class => "media-object img-circle" %>
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading"><%= post.user.name %></h4>
+            <div class="media">
+              <% if post.description.length >= 1 %>
+                <p>"<%= post.text %>"</p>
+              <% else %>
+                <br />
+              <% end %>
+              <h5><%= distance_of_time_in_words(post.created_at, to_time = Time.now, include_seconds = false) %> ago
+              <%= link_to image_tag("iconmonstr-trash-can-15-icon.png", :class => 'edit-button right'), post_url(post.id), :method => 'delete', data: { confirm: "Do you really want to delete this post?" } %>
+              <%= link_to image_tag("iconmonstr-edit-9-icon.png", :class => 'edit-button right'), edit_post_url(post.id) %>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
 </div>

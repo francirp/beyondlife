@@ -25,3 +25,36 @@ body {
 .right-col h1 {
   text-align: center;
 }
+
+.right-col h5 {
+  text-align: center;
+}
+
+.hero-unit {
+padding: 10px;
+margin-bottom: 30px;
+font-size: 18px;
+font-weight: 200;
+line-height: 30px;
+color: inherit;
+background-color: #f5f5f5;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+}
+
+.button-header {
+  padding: 28px;
+  width: 560px;
+  height: 44px;
+}
+
+.edit-button {
+  width: 32px;
+  height: 32px;
+}
+
+.guest_post_container {
+  padding: 100px 20px 20px 20px;
+  width: 940px;
+}
