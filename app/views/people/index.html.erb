@@ -1,40 +1,28 @@
-<h1>People</h1>
+<h1>My Tributes</h1>
 
-<p><%= link_to 'Add a New Person', new_person_url %></p>
+<h4><%= link_to 'Add a New Person', new_person_url %></h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>Dob</th>
-      <th>Dod</th>
-      <th>Full name</th>
-      <th>Quote</th>
-      <th>Eulogy</th>
-      <th>Charity</th>
-      <th>Photo url</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% @people.each do |person| %>
+      <div class="hero-unit">
+        <div class="media">
+          <a class="pull-left">
+            <%= image_tag person.photo_url, :class => "media-object img-circle index-img-circle" %>
+          </a>
+          <div class="media-body">
+            <h2 class="media-heading"><%= person.full_name %></h2>
+            <p><%= person.dob %> to <%= person.dod %></p>
+            <div class="media">
+                <h4>
+                  <%= image_tag "iconmonstr-quote-5-icon.png", :class => "quote-icon" %> <%= person.quote %>
+                  <%= image_tag "iconmonstr-quote-6-icon.png", :class => "quote-icon" %>
+                </h4>
+              <%= link_to image_tag("iconmonstr-eye-6-icon.png", :class => 'edit-button'), person_url(person.id) %>
+              <%= link_to image_tag("iconmonstr-edit-9-icon.png", :class => 'edit-button'), edit_person_url(person.id) %>
+              <%= link_to image_tag("iconmonstr-trash-can-15-icon.png", :class => 'edit-button'), person_url(person.id), :method => 'delete', data: { confirm: "Do you really want to delete this post?" } %>
 
-  <tbody>
-  <% @people.each do |person| %>
-    <tr>
-      <td><%= person.dob %></td>
-      <td><%= person.dod %></td>
-      <td><%= person.full_name %></td>
-      <td><%= person.quote %></td>
-      <td><%= person.eulogy %></td>
-      <td><%= person.charity %></td>
-      <td><%= person.photo_url %></td>
-  
-      <td><%= link_to 'Show', person_url(person) %></td>
-      <td><%= link_to 'Edit', edit_person_url(person) %></td>
-      <td><%= link_to 'Destroy', person_url(person), method: 'delete', data: { confirm: "Do you really want to delete this person?" } %></td>
 
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
+            </div>
+          </div>
+        </div>
+      </div>
+<% end %>

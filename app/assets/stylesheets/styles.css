@@ -2,6 +2,12 @@
 clear: both;
 }
 
+#navbar-right {
+  float: right;
+  width: 150px;
+  height: 42px;
+}
+
 body {
   padding: 80px 0 0 0;
 }
@@ -83,4 +89,14 @@ border-radius: 6px;
 .quote-icon {
   height: 32px;
   width: 32px;
+}
+
+.right-col .img-circle {
+  width: 200px;
+  height: 200px;
+}
+
+.index-img-circle{
+  width: 200px;
+  height: 200px;
 }
