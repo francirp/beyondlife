@@ -1,4 +1,12 @@
-<h1>Person #<%= @person.id %></h1>
+
+<div class="left-col">
+  <%= image_tag @person.photo_url %>
+</div>
+
+<div class="right-col">
+  <h1><%= @person.full_name %></h1>
+
+
 
 <p>
   <b>Dob:</b>
@@ -35,4 +43,4 @@
   <%= @person.photo_url %>
 </p>
 
-
+</div>
