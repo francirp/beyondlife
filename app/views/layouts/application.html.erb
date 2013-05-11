@@ -12,8 +12,10 @@
       <a class="brand" href="/">BeyondLife</a>
       <ul class="nav">
         <li class="<%= 'active' if current_page?(root_url) %>"><a href="<%= root_url %>">Home</a></li>
-        <li class="<%= 'active' if current_page?(people_url) %>"><a href="<%= people_url %>">Tributes</a></li>
-        <li class="<%= 'active' if current_page?(new_person_url) %>"><a href="<%= new_person_url %>">Create a Tribute</a></li>
+        <% if session[:user_id].present? %>
+          <li class="<%= 'active' if current_page?(people_url) %>"><a href="<%= people_url %>">Tributes</a></li>
+          <li class="<%= 'active' if current_page?(new_person_url) %>"><a href="<%= new_person_url %>">Create a Tribute</a></li>
+        <% end %>
       </ul>
       <div id="navbar-right">
         <ul class="nav">
