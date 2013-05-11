@@ -1,5 +1,10 @@
 Beyondlife::Application.routes.draw do
+  #session routes
+  get '/sign_in' => 'sessions#new', :as => 'sign_in'
+  get '/sessions' => 'sessions#create', :as => 'sessions'
+  get '/sign_out' => 'sessions#destroy', :as => 'sign_out'
 
+  #omni auth
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
 

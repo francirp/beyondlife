@@ -7,6 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <a class="brand" href="/">BeyondLife</a>
+      <ul class="nav">
+
+      </ul>
+      <div id="navbar-right">
+        <ul class="nav">
+          <% if session[:user_id] %>
+            <li><a href="/sign_out">Sign Out</a></li>
+          <% else %>
+            <li><a href="/sign_in">Sign In via Facebook</a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
 
 <%= yield %>
 
