@@ -10,9 +10,8 @@ def create
 end
 
 def destroy
-  @user_first_name = User.find(:user_id).first_name
   session[:user_id] = nil
-  redirect_to root_path, :notice => "You have been successfully logged out, #{@user_first_name}."
+  redirect_to root_path, :notice => "You have successfully logged out."
 end
 
 end

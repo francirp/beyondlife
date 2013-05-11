@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130511181204) do
+ActiveRecord::Schema.define(:version => 20130511191309) do
 
   create_table "guest_posts", :force => true do |t|
     t.string   "text"
@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(:version => 20130511181204) do
   end
 
   create_table "people", :force => true do |t|
-    t.datetime "dob"
-    t.datetime "dod"
-    t.string   "full_name"
-    t.string   "quote"
-    t.string   "eulogy"
-    t.string   "charity"
-    t.string   "photo_url"
+    t.string "dob"
+    t.string "dod"
+    t.string "full_name"
+    t.string "quote"
+    t.string "eulogy"
+    t.string "charity"
+    t.string "photo_url"
   end
 
   create_table "trait_types", :force => true do |t|

@@ -1,4 +1,6 @@
 Beyondlife::Application.routes.draw do
+  root :to => 'static#index'
+
   #session routes
   get '/sign_in' => 'sessions#new', :as => 'sign_in'
   get '/sessions' => 'sessions#create', :as => 'sessions'

@@ -9,6 +9,7 @@ class PeopleController < ApplicationController
   end
 
   def new
+    @user = User.find(session[:user_id])
     @person = Person.new
   end
 
@@ -21,7 +22,7 @@ class PeopleController < ApplicationController
     @person.eulogy = params[:eulogy]
     @person.charity = params[:charity]
     @person.photo_url = params[:photo_url]
-    
+
     if @person.save
             redirect_to people_url
           else
@@ -42,7 +43,7 @@ class PeopleController < ApplicationController
     @person.eulogy = params[:eulogy]
     @person.charity = params[:charity]
     @person.photo_url = params[:photo_url]
-    
+
     if @person.save
             redirect_to people_url
           else

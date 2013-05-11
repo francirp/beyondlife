@@ -18,12 +18,19 @@
           <% if session[:user_id] %>
             <li><a href="/sign_out">Sign Out</a></li>
           <% else %>
-            <li><a href="/sign_in">Sign In via Facebook</a></li>
+            <li><a href="/auth/facebook">Sign In via Facebook</a></li>
           <% end %>
         </ul>
       </div>
     </div>
   </div>
+
+<div class="container">
+ <% if notice.present? %>
+  <div class="alert alert-success">
+    <%= notice %>
+  </div>
+ <% end %>
 
 <%= yield %>
 
