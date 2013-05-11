@@ -3,11 +3,11 @@ clear: both;
 }
 
 body {
-  padding: 50px 0 0 0;
+  padding: 80px 0 0 0;
 }
 
 .left-col {
-  width: 300px;
+  width: 400px;
   display: inline;
   float: left;
   overflow: hidden;
@@ -19,7 +19,7 @@ body {
 }
 
 .right-col {
-  width: 580px;
+  width: 480px;
   display: inline;
   float: left;
   overflow: hidden;
@@ -31,6 +31,10 @@ body {
 }
 
 .right-col h5 {
+  text-align: center;
+}
+
+.right-col h4 {
   text-align: center;
 }
 
@@ -72,6 +76,11 @@ border-radius: 6px;
 }
 
 .edit-button {
+  height: 32px;
+  width: 32px;
+}
+
+.quote-icon {
   height: 32px;
   width: 32px;
 }

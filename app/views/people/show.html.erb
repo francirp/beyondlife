@@ -7,26 +7,10 @@
   <h1><%= @person.full_name %></h1>
   <h5><%= @person.dob %> - <%= @person.dod %></h5>
 
-
-<p>
-  <b>Dob:</b>
-  <%= @person.dob %>
-</p>
-
-<p>
-  <b>Dod:</b>
-  <%= @person.dod %>
-</p>
-
-<p>
-  <b>Full name:</b>
-  <%= @person.full_name %>
-</p>
-
-<p>
-  <b>Quote:</b>
-  <%= @person.quote %>
-</p>
+<h4>
+  <%= image_tag "iconmonstr-quote-5-icon.png", :class => "quote-icon" %> <%= @person.quote %>
+  <%= image_tag "iconmonstr-quote-6-icon.png", :class => "quote-icon" %>
+</h4>
 
 <p>
   <b>Eulogy:</b>
