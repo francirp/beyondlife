@@ -1,95 +1,14 @@
-<h1>New Guest Post</h1>
-
-<h1 class="span8 offset2">Add a new Tribute.</h1>
+<h1 class="span8 offset2">Message for <%= @person.full_name %>.</h1>
 
 
 <%= form_tag(people_url, method: 'post', :class => 'clearfix form-horizontal span6 offset2') do %>
-
-  <%= hidden_field_tag :user_id, @user.id %>
-
-  <div class="control-group">
-    <%= label_tag :text, "Message for Guest Book", :class => "control-label" %>
-      <div class="controls">
-        <%= text_field_tag :text %> <br />
-      </div>
-  </div>
+  <%= text_area_tag :text, "" , :class => "span8" %>
 
   <%= hidden_field_tag :created_at, Time.new %>
   <%= hidden_field_tag :user_id, @user.id %>
+  <%= hidden_field_tag :person_id, @person.id %>
 
-  <div class="control-group">
-    <%= label_tag :dod, "Date of Death", :class => "control-label" %>
-      <div class="controls">
-        <%= text_field_tag :dod %> <br />
-      </div>
-  </div>
-
-  <div class="control-group">
-    <%= label_tag :full_name, "Full Name", :class => "control-label" %>
-      <div class="controls">
-        <%= text_field_tag :full_name %> <br />
-      </div>
-  </div>
-
-  <div class="control-group">
-    <%= label_tag :quote, "Remembrance Quote", :class => "control-label" %>
-      <div class="controls">
-        <%= text_area_tag :quote %> <br />
-      </div>
-  </div>
-
-  <div class="control-group">
-    <%= label_tag :eulogy, "Eulogy", :class => "control-label" %>
-      <div class="controls">
-        <%= text_area_tag :eulogy %> <br />
-      </div>
-  </div>
-
-  <div class="control-group">
-    <%= label_tag :charity, "Charity (optional)", :class => "control-label" %>
-      <div class="controls">
-        <%= text_field_tag :charity %> <br />
-      </div>
-  </div>
-
-  <div class="control-group">
-    <%= label_tag :photo_url, "Image URL", :class => "control-label" %>
-      <div class="controls">
-        <%= text_field_tag :photo_url %> <br />
-      </div>
-  </div>
-
-    <div>
-      <button type="submit" class="btn btn-primary span2 offset2">Create Tribute</button>
+    <div class="button-align">
+      <button type="submit" class="btn btn-primary span3">Create Post</button>
     </div>
-<% end %>
-
-
-<%= form_tag(guest_posts_url, method: 'post') do %>
-
-
-  <div>
-    <%= label_tag :text %><br />
-    <%= text_field_tag :text %>
-  </div>
-
-    <div>
-    <%= label_tag :created_at %><br />
-    <%= datetime_select_tag :created_at %>
-  </div>
-
-    <div>
-    <%= label_tag :user_id %><br />
-    <%= number_field_tag :user_id %>
-  </div>
-
-    <div>
-    <%= label_tag :person_id %><br />
-    <%= number_field_tag :person_id %>
-  </div>
-
-
-  <div>
-    <%= submit_tag "Create Guest Post" %>
-  </div>
 <% end %>

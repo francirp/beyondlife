@@ -10,6 +10,8 @@ class GuestPostsController < ApplicationController
 
   def new
     @guest_post = GuestPost.new
+    @user = User.find(session[:user_id])
+    @person = Person.find(params[:person_id])
   end
 
   def create
@@ -18,7 +20,7 @@ class GuestPostsController < ApplicationController
     @guest_post.created_at = params[:created_at]
     @guest_post.user_id = params[:user_id]
     @guest_post.person_id = params[:person_id]
-    
+
     if @guest_post.save
             redirect_to guest_posts_url
           else
@@ -36,7 +38,7 @@ class GuestPostsController < ApplicationController
     @guest_post.created_at = params[:created_at]
     @guest_post.user_id = params[:user_id]
     @guest_post.person_id = params[:person_id]
-    
+
     if @guest_post.save
             redirect_to guest_posts_url
           else

@@ -43,7 +43,7 @@
 <div class="guest_post_container">
   <div class="button-header">
       <% if session[:user_id].present? %>
-          <a href="<%= new_guest_post_url %>"><button class="btn btn-primary btn-large span3 offset2">Add a Guest Post</button></a>
+          <a href="<%= new_guest_post_url %>?person_id=<%= @person.id %>"><button class="btn btn-primary btn-large span3 offset2">Add a Guest Post</button></a>
       <% else %>
         <a href="/auth/facebook"><button class="btn btn-primary btn-large span3 offset2">Sign in via Facebook</button></a>
       <% end %>
