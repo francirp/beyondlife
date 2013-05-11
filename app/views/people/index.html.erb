@@ -1,0 +1,40 @@
+<h1>People</h1>
+
+<p><%= link_to 'Add a New Person', new_person_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dob</th>
+      <th>Dod</th>
+      <th>Full name</th>
+      <th>Quote</th>
+      <th>Eulogy</th>
+      <th>Charity</th>
+      <th>Photo url</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @people.each do |person| %>
+    <tr>
+      <td><%= person.dob %></td>
+      <td><%= person.dod %></td>
+      <td><%= person.full_name %></td>
+      <td><%= person.quote %></td>
+      <td><%= person.eulogy %></td>
+      <td><%= person.charity %></td>
+      <td><%= person.photo_url %></td>
+  
+      <td><%= link_to 'Show', person_url(person) %></td>
+      <td><%= link_to 'Edit', edit_person_url(person) %></td>
+      <td><%= link_to 'Destroy', person_url(person), method: 'delete', data: { confirm: "Do you really want to delete this person?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

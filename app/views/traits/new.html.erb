@@ -1,0 +1,21 @@
+<h1>New Trait</h1>
+
+
+<%= form_tag(traits_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :person_id %><br />
+    <%= number_field_tag :person_id %>
+  </div>
+
+    <div>
+    <%= label_tag :trait_type_id %><br />
+    <%= number_field_tag :trait_type_id %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Create Trait" %>
+  </div>
+<% end %>
