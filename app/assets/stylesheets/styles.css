@@ -103,7 +103,7 @@ border-radius: 6px;
 
 .homepage_image {
   margin: -30px 0px 0px 0px;
-  background-image: url("http://localhost:3000/assets/BL-Index.png");
+  background-image: url("/assets/BL-Index.png");
   width: 960px;
   height: 600px;
 }
