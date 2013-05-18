@@ -1,1 +1,16 @@
-<div class="homepage_image"></div>
+<style>
+body {
+  background-image: url("/assets/homepage.png");
+  background-position: top;
+}
+</style>
+
+
+
+<div class="centered">
+  <% if session[:user_id].present? %>
+    <a href="<%= new_person_url %>" class="btn btn-primary btn-large">Create a New Tribute</a>
+  <% else %>
+  <a href="/auth/facebook"><%= image_tag "/assets/fbbutton.png" %></a>
+  <% end %>
+</div>

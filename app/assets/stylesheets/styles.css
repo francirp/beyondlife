@@ -101,14 +101,15 @@ border-radius: 6px;
   height: 200px;
 }
 
-.homepage_image {
-  margin: -30px 0px 0px 0px;
-  background-image: url("/assets/BL-Index.png");
-  width: 960px;
-  height: 600px;
-}
-
 .avatar {
   height: 100px;
   width: 100px;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 46%;
+  margin-top: -50px;
+  margin-left: -100px;
 }
